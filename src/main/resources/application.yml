@@ -3,9 +3,9 @@ server:
 
 spring:
   datasource:
-    url: ${spring.datasource.url}
-    username: ${spring.datasource.username}
-    password: ${spring.datasource.password}
+    url: ${spring.datasource.url:jdbc:postgresql://localhost:5432/starwars_local}
+    username: ${spring.datasource.username:postgres}
+    password: ${spring.datasource.password:postgres}
   jpa:
     hibernate:
       ddl-auto: update
@@ -18,5 +18,5 @@ spring:
 
 security:
   jwt:
-    secret: ${JWT_SECRET:change-me-32chars-min}
+    secret: ${JWT_SECRET}
     expires-min: 15
